@@ -14,6 +14,26 @@
         Reread Class --> title, author, genre, why reread? More investigation? Just plain old fun?
     - Style specific to book lovers - quotes by famous authors as footnotes if I can do that, maybe some images of libraries, etc.
 
+## Time to Code
+
+- Build models
+    - Migrations
+    - Model Classes
+    - Associations and Validations
+
+- Test your models and associations in the controller
+    - create some seed data
+    - adjust migrations as needed
+
+## Controllers and views
+
+- Start with your ApplicationController helpers - #logged_in? and #current_user
+    - add your login/signup/signout routes
+
+- Build out controller routes for other models (add controller for each model)
+
+- Build views and controller actions based on the flow of your app, one step at a time, testing as you go.
+
 ## CRUD functionality -> Book class
 
 # Create
