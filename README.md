@@ -17,9 +17,9 @@
 ## Time to Code
 
 - Build models
-    - Migrations
-    - Model Classes
-    - Associations and Validations
+    - Migrations - DONE
+    - Model Classes - DONE
+    - Associations and Validations - DONE
 
 - Test your models and associations in the controller
     - create some seed data

@@ -1,0 +1,12 @@
+
+mikelanne = User.create(username: "mikelandbeforetime", password: "password")
+stevie = User.create(username: "steviebudd", password: "password")
+
+mikelanne.books.create(title: "Daughters of Nri", author: "Reni K. Amayo", genre: "Fantasy", description: "A gruesome war results in the old gods' departure from earth. The only remnants of their existence lie in two girls. Twins, separated at birth. Goddesses who grow up believing that they are human. Daughters Of Nri explores their epic journey of self-discovery as they embark on a path back to one another.")
+mikelanne.books.create(title: "An Unkindness of Ghosts", author: "Rivers Solomon", genre: "Science Fiction", description: "Aster has little to offer folks in the way of rebuttal when they call her ogre and freak. She's used to the names; she only wishes there was more truth to them. If she were truly a monster, she'd be powerful enough to tear down the walls around her until nothing remains of her world.")
+mikelanne.books.create(title: "Atonement", author: "Ian McEwan", genre: "Bildungsroman", description: "On a hot summer day in 1935, thirteen-year-old Briony Tallis witnesses a moment's flirtation between her older sister, Cecilia, and Robbie Turner, the son of a servant and Cecilia's childhood friend. But Briony' s incomplete grasp of adult motives-together with her precocious literary gifts-brings about a crime that will change all their lives.")
+stevie.books.create(title: "Live Fast Die Hot", author: "Jenny Mollen", genre: "Memoir", description: "Searingly funny and surprisingly affecting, Live Fast Die Hot is a collection of stories about what happens when you realize that some things are more important than crafting the perfect tweet--and a reminder that even if you never thought you were cut out for parenting, at least you can be better at it than your mother.")
+stevie.books.create(title: "The Meaning of Mariah Carey", author: "Mariah Carey", genre: "Memoir", description: "This book is composed of my memories, my mishaps, my struggles, my survival and my songs. Unfiltered. I went deep into my childhood and gave the scared little girl inside of me a big voice. I let the abandoned and ambitious adolescent have her say, and the betrayed and triumphant woman I became tell her side.")
+stevie.books.create(title: "Princess Margaret: A Life of Contrasts", author: "Christopher Warwick", genre: "Biography", description: "The fascinating biography of one of the most controversial royal figures of the twentieth century and its first celebrity: Princess Margaret.")
+
+
