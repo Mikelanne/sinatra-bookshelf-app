@@ -13,6 +13,10 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect '/books'
         end
+    end
+
+    get "/login" do
+        erb :"users/login"
     end 
 
 end 
