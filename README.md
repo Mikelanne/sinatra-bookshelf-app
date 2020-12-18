@@ -22,8 +22,8 @@
     - Associations and Validations - DONE
 
 - Test your models and associations in the controller
-    - create some seed data
-    - adjust migrations as needed
+    - create some seed data - DONE
+    - adjust migrations as needed - N/A
 
 ## Controllers and views
 
