@@ -6,9 +6,13 @@ class UsersController < ApplicationController
     end 
 
     post "/signup" do
-        user = User.create(params[:user])
-        session[:user_id] = user.id 
-        redirect '/books'
+        if params[:user].values.any?{|value| value.blank?}
+            redirect "/signup"
+        else 
+            user = User.create(params[:user])
+            session[:user_id] = user.id 
+            redirect '/books'
+        end
     end 
 
 end 
