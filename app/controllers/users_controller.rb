@@ -1,11 +1,11 @@
 class UsersController < ApplicationController
 
 
-    get "/signup" do
+    get "/users/signup" do
         erb :"users/new"
     end 
 
-    post "/signup" do
+    post "/users/signup" do
         if params[:user].values.any?{|value| value.blank?}
             redirect "/signup"
         else 
@@ -15,11 +15,11 @@ class UsersController < ApplicationController
         end
     end
 
-    get "/login" do
+    get "/users/login" do
         erb :"users/login"
     end 
 
-    post "/login" do 
+    post "/users/login" do 
 
     end
 
