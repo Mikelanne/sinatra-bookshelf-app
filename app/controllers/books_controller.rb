@@ -15,12 +15,9 @@ class BooksController < ApplicationController
         redirect "/books"
     end 
 
-
     get '/books/:id' do #show page for each book
         @book = Book.find_by(id: params[:id])
         erb :"books/show"
     end 
-
-
 
 end 
