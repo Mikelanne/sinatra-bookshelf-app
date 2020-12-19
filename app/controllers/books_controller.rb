@@ -18,6 +18,11 @@ class BooksController < ApplicationController
     get '/books/:id' do #show page for each book
         @book = Book.find_by(id: params[:id])
         erb :"books/show"
+    end
+
+    get '/books/:id/edit' do
+        @book = Book.find_by(id: params[:id])
+        erb :"books/edit"
     end 
 
 end 

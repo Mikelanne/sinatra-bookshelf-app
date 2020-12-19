@@ -1,0 +1,11 @@
+<h1>Oops! Lets fix that.</h1>
+<h2>Edit <%= @book.title %> here.</h2>
+<br>
+
+<form action="/books/new" method="post">
+    <b>Title: &nbsp; </b><input type="text" name="book[title]"><br><br>
+    <b>Author: &nbsp; </b><input type="text" name="book[author]"><br><br>
+    <b>Genre: &nbsp; </b><input type="text" name="book[genre]"><br><br>
+    <b>Description: &nbsp; </b><input type="text" name="book[description]"><br><br>
+    <input type="submit" value="Add Book">
+</form>
