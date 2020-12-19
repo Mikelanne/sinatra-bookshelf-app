@@ -20,10 +20,10 @@ class UsersController < ApplicationController
     end 
 
     post "/users/login" do #recieve the log in form, find the user, log the user in
-        user = User.find_by(params[:username])
-        if user && user.authenticate(params[:password])
+        user = User.find_by(username: params[:user][:username])
+        if user && user.authenticate(password: params[:user][:password])
             session[:user_id] = user.id 
-            redirect '/books/index'
+            redirect '/books'
         end
     end
 
