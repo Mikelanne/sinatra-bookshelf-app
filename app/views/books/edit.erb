@@ -2,10 +2,11 @@
 <h2>Edit <%= @book.title %> here.</h2>
 <br>
 
-<form action="/books/new" method="post">
-    <b>Title: &nbsp; </b><input type="text" name="book[title]"><br><br>
-    <b>Author: &nbsp; </b><input type="text" name="book[author]"><br><br>
-    <b>Genre: &nbsp; </b><input type="text" name="book[genre]"><br><br>
-    <b>Description: &nbsp; </b><input type="text" name="book[description]"><br><br>
-    <input type="submit" value="Add Book">
+<form action="/books/<%= @book.id %>/edit" method="post">
+    <input type="hidden" value="PATCH" name="_method">
+    <b>Title: &nbsp; </b><input type="text" name="book[title]" value="<%= @book.title %>"><br><br>
+    <b>Author: &nbsp; </b><input type="text" name="book[author]" value="<%= @book.author %>"><br><br>
+    <b>Genre: &nbsp; </b><input type="text" name="book[genre]" value="<%= @book.genre %>"><br><br>
+    <b>Description: &nbsp; </b><input type="text" name="book[description]" value="<%= @book.description %>"><br><br>
+    <input type="submit" value="Edit Book">
 </form>

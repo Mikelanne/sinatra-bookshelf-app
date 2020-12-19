@@ -25,4 +25,10 @@ class BooksController < ApplicationController
         erb :"books/edit"
     end 
 
+    patch '/books/:id/edit' do
+        @book = Book.find_by(id: params[:id])
+        @book.update(params[:book])
+        redirect "/books/#{@book.id}"
+    end
+
 end 
