@@ -6,15 +6,19 @@ class BooksController < ApplicationController
         erb :"books/index"
     end 
 
+    get '/books/new' do 
+        erb :"books/new"
+    end
+
+    post '/books/new' do 
+        book = Book.create(params[:book])
+        redirect "/books"
+    end 
+
 
     get '/books/:id' do #show page for each book
         @book = Book.find_by(id: params[:id])
         erb :"books/show"
-    end 
-
-
-    get '/books/new' do 
-        erb :"books/new"
     end 
 
 
