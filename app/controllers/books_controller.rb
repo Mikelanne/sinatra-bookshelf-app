@@ -31,4 +31,10 @@ class BooksController < ApplicationController
         redirect "/books/#{@book.id}"
     end
 
+    delete '/books/:id' do
+        @book = Book.find_by(id: params[:id])
+        @book.destroy
+        redirect '/books'
+    end 
+
 end 
