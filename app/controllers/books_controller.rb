@@ -2,7 +2,8 @@ class BooksController < ApplicationController
 
 
     get '/books' do #index that loads all the books
-        erb:index
+        @books = Book.all
+        erb :"books/index"
     end 
 
 
