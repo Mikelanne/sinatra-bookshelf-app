@@ -1,6 +1,7 @@
 <h1>Sign up</h1>
 <br>
-<form method="POST" action="/users">
+<%= @errors %>
+<form method="POST" action="/signup">
     Username: <input type="text" name="user[username]"><br><br>
     Password: <input type="password" name="user[password]"><br><br>
     <input type="submit" value="Sign Up">

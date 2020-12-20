@@ -5,13 +5,14 @@ class UsersController < ApplicationController
         erb :"users/new"
     end 
 
-    post "/users" do
-        if params[:user].values.any?{|value| value.blank?}
-            redirect "/signup"
-        else 
-            user = User.create(params[:user])
+    post "/signup" do
+        user = User.new(params[:user])
+        if user.save
             session[:user_id] = user.id 
-            redirect '/users/login'
+            redirect "/users/#{user.id}"
+        else 
+            @errors = user.errors.full_messages.join(" - ")
+            erb :'/users/new'
         end
     end
 
@@ -25,8 +26,8 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect "/users/#{user.id}"
         else 
-            flash[:error] = "We could not locate a Bookshelf with those credentials, please sign up or try again."
-            redirect "/"
+           @errors = user.errors.full_messages.join(" - ")
+            erb :"/users/new"
         end
     end
 
