@@ -25,8 +25,8 @@ class UsersController < ApplicationController
             session[:user_id] = user.id 
             redirect "/users/#{user.id}"
         else 
-            #tell the user they entered invalid credentials
-            #redirect to the log in page
+            flash[:error] = "We could not locate a Bookshelf with those credentials, please sign up or try again."
+            redirect "/"
         end
     end
 
