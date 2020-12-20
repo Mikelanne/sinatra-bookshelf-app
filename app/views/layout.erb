@@ -20,6 +20,8 @@
 
       <footer class="branding">
         <small>&copy; 2020 <strong>BookshelfApp</strong></small>
+        <% if logged_in? %>
+          <small><%= current_user.username %></small>
       </footer>
     </div>
 
