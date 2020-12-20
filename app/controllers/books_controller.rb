@@ -10,7 +10,7 @@ class BooksController < ApplicationController
         erb :"books/new"
     end
 
-    post '/books/new' do 
+    post '/books/new' do
         book = current_user.books.build(params[:book])
         book.save
         redirect "/books"
