@@ -16,16 +16,11 @@ class UsersController < ApplicationController
         end
     end
 
-    get "/logout" do
-        session.clear
-        redirect '/login'
-    end 
-
     get "/login" do
         erb :"users/login"
     end 
 
-    post "/users/login" do #recieve the log in form, find the user, log the user in
+    post "/login" do
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id 
@@ -38,6 +33,11 @@ class UsersController < ApplicationController
     get "/users/:id" do
         @user = User.find_by(id: params[:id])
         erb :"/users/show"
+    end 
+
+    get "/logout" do
+        session.clear
+        redirect '/login'
     end 
 
 end 
