@@ -1,85 +1,30 @@
-# Sinatra App Plan
+# Bookself
 
-## Pre-Coding
-- What do you want to build?
-    I am going to build an app that keeps track of all the books on my to-read list. These are books I own, sitting on my bookshelf, unopened. I will be able to add books to the list as I buy more, and I will be able to remove books/check them off maybe? as I read them.
-- Wireframing & User Stories
-    - Models, their attributes, their associations
-        - User model --> username, password. --> A user has many books
-        - Book model --> title, author, genre, bio --> A book belongs to a user
-- MVP
-    - The basic app - User class, book model, description above
-- Stretch Goals
-    - Another class for books worthy of a reread!
-        Reread Class --> title, author, genre, why reread? More investigation? Just plain old fun?
-    - Style specific to book lovers - quotes by famous authors as footnotes if I can do that, maybe some images of libraries, etc.
+Bookshelf is a Sinatra app that allows users to keep track of all the books on their "to read" list. Bookshelf allows users to add, edit, and remove books from their Bookshelf. Each user can only makes changes the books on their own shelves, and usernames must be unique.
 
-## Time to Code
+## Installation
 
-- Build models
-    - Migrations - DONE
-    - Model Classes - DONE
-    - Associations and Validations - DONE
+Clone from GitHub using this link: git@github.com:Mikelanne/sinatra-bookshelf-app.git
 
-- Test your models and associations in the controller
-    - create some seed data - DONE
-    - adjust migrations as needed - N/A
+```bash
+git clone git@github.com:Mikelanne/sinatra-bookshelf-app.git
+cd sinatra-bookshelf-app
+```
+Then run shotgun in your terminal:
 
-## Controllers and views
+```bash
+shotgun
+```
+And follow the link: http://127.0.0.1:9393/
 
-- Start with your ApplicationController helpers - #logged_in? and #current_user
-    - add your login/signup/signout routes
+## Usage
 
-- Build out controller routes for other models (add controller for each model)
+All functionality will be in the browser.
 
-- Build views and controller actions based on the flow of your app, one step at a time, testing as you go.
+## Contributing
 
-## CRUD functionality -> Book class
+If you would like to contribute to this repository, please first discuss the change you wish to make via issue , email, or any other method with the owner of this repository. 
 
-# Create
-## New
-- displays the form to make the new Book
-- get /books/new
-- new.erb
+## License
 
-## Create
-- processes the form and it actually makes and saves the Book
-- post /books
-- no view, redirects to show for that thing or index
-- Book.create
-
-# Read
-## Index
-- show all of the things
-- get /books
-- index.erb
-- Book.all
-
-## Show
-- details on one of the things
-- get /books/:id
-- show.erb
-- Book.find_by(id: params[:id])
-
-# Update
-## Edit
-- displays the form to change one thing
-- get /books/:id/edit
-- edit.erb
-- Book.find_by(id: params[:id])
-
-## Update
-- proccesses the form and makes the change
-- patch /books/:id
-- no view, redirects to show
-- instance = Book.find_by(id: params[:id])
-- instance.update(params[:key])
-
-
-# Delete
-## destroy
-- process the form and destroys the thing
-- delete /artists/:id
-- no view, redirect to index
-- instance = Model.find_by(id: params[:id])
-- instance.destroy
+[MIT](https://choosealicense.com/licenses/mit/)
