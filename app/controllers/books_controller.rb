@@ -12,17 +12,22 @@ class BooksController < ApplicationController
 
     post '/books/new' do 
         book = current_user.books.build(params[:book])
+        book.save
         redirect "/books"
     end 
 
-    get '/books/:id' do #show page for each book
+    get '/books/:id' do
         @book = Book.find_by(id: params[:id])
         erb :"books/show"
     end
 
     get '/books/:id/edit' do
         @book = Book.find_by(id: params[:id])
-        erb :"books/edit"
+        if @book.user == current_user
+            erb :"books/edit"
+        else
+            redirect "/books"
+        end
     end 
 
     patch '/books/:id/edit' do
