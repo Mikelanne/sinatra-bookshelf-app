@@ -1,6 +1,7 @@
 <h1>Sign up</h1>
+<hr/>
 <br>
-<%= @errors %>
+<p style="color: #C71585"><b><%= @errors %></p></b>
 <form method="POST" action="/signup">
     Username: <input type="text" name="user[username]"><br><br>
     Password: <input type="password" name="user[password]"><br><br>
