@@ -21,7 +21,7 @@ class UsersController < ApplicationController
 
     post "/users/login" do #recieve the log in form, find the user, log the user in
         user = User.find_by(username: params[:user][:username])
-        if user && user.authenticate(password: params[:user][:password])
+        if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id 
             redirect "/users/#{user.id}"
         else 
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     end
 
     get "/users/:id" do
-        #users show
+        erb :"/users/show"
     end 
 
 end 

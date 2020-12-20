@@ -2,6 +2,7 @@ class BooksController < ApplicationController
 
 
     get '/books' do #need to figure out how to get this to just the user's books
+        @binding.pry
         @books = Book.all
         erb :"books/index"
     end 
