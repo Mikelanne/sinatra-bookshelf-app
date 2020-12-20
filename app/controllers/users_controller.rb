@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         end
     end
 
-    get "/users/login" do
+    get "/login" do
         erb :"users/login"
     end 
 
@@ -23,7 +23,7 @@ class UsersController < ApplicationController
         user = User.find_by(username: params[:user][:username])
         if user && user.authenticate(params[:user][:password])
             session[:user_id] = user.id 
-            redirect "/users/show"
+            redirect "/users/#{user.id}"
         else 
             flash[:error] = "We could not locate a Bookshelf with those credentials, please sign up or try again."
             redirect "/"
@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     end
 
     get "/users/:id" do
-        @user = User.find_by(id: params[:user][:id])
+        @user = User.find_by(id: params[:id])
         erb :"/users/show"
     end 
 
