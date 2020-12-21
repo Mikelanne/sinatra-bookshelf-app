@@ -10,7 +10,9 @@ class BooksController < ApplicationController
         erb :"books/new"
     end
 
-    post '/books/new' do
+    post '/books' do
+        #presence validation for title at least
+        #conditional to check validation
         book = current_user.books.build(params[:book])
         book.save
         redirect "/books"
@@ -30,7 +32,7 @@ class BooksController < ApplicationController
         end
     end 
 
-    patch '/books/:id/edit' do
+    patch '/books/:id' do
         @book = Book.find_by(id: params[:id])
         @book.update(params[:book])
         redirect "/books/#{@book.id}"
@@ -41,5 +43,7 @@ class BooksController < ApplicationController
         @book.destroy
         redirect '/books'
     end 
+
+    #add validations to patch and delete like edit
 
 end 

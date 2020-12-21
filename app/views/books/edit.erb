@@ -2,7 +2,7 @@
 <h2>Edit <%= @book.title %> here.</h2>
 <br>
 
-<form action="/books/<%= @book.id %>/edit" method="post">
+<form action="/books/<%= @book.id %>" method="post">
     <input type="hidden" value="PATCH" name="_method">
     <b>Title: &nbsp; </b><input type="text" name="book[title]" value="<%= @book.title %>"><br><br>
     <b>Author: &nbsp; </b><input type="text" name="book[author]" value="<%= @book.author %>"><br><br>
