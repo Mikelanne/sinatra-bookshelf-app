@@ -1,7 +1,7 @@
 <h1>Your books!</h1>
-
+<hr/><br>
 <ul><% @books.each do |book| %>
     <li><a href="/books/<%= book.id %>"><%= book.title %></a> by <%= book.author %></li>
 <% end %></ul>
-
+<br><br>
 <a href="/books/new">Add a New Book</a>

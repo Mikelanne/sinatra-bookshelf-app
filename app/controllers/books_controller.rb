@@ -13,6 +13,7 @@ class BooksController < ApplicationController
     post '/books' do
         book = Book.new(params[:book])
         if book.save
+            current_user.books.create(params[:book])
             redirect "/books"
         else
             @errors = book.errors.full_messages.join(" - ")
