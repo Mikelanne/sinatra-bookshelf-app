@@ -1,7 +1,7 @@
 <h1>You bought another book, didn't you?</h1>
 <hr/>
 <br>
-
+<p style="color: #C71585"><b><%= @errors %></p></b>
 <form action="/books" method="post">
     <b>Title: &nbsp; </b><input type="text" name="book[title]"><br><br>
     <b>Author: &nbsp; </b><input type="text" name="book[author]"><br><br>

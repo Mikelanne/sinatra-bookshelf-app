@@ -11,12 +11,13 @@ class BooksController < ApplicationController
     end
 
     post '/books' do
-        #presence validation for title at least
-        #conditional to check validation
-        if 
-        book = current_user.books.build(params[:book])
-        book.save
-        redirect "/books"
+        book = Book.new(params[:book])
+        if book.save
+            redirect "/books"
+        else
+            @errors = book.errors.full_messages.join(" - ")
+            erb :'/books/new'
+        end
     end 
 
     get '/books/:id' do
@@ -52,7 +53,5 @@ class BooksController < ApplicationController
             redirect '/books'
         end 
     end 
-
-    #add validations to patch and delete like edit
 
 end 
