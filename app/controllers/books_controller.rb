@@ -13,6 +13,7 @@ class BooksController < ApplicationController
     post '/books' do
         #presence validation for title at least
         #conditional to check validation
+        if 
         book = current_user.books.build(params[:book])
         book.save
         redirect "/books"
@@ -34,14 +35,22 @@ class BooksController < ApplicationController
 
     patch '/books/:id' do
         @book = Book.find_by(id: params[:id])
-        @book.update(params[:book])
-        redirect "/books/#{@book.id}"
+        if @book.user == current_user
+            @book.update(params[:book])
+            redirect "/books/#{@book.id}"
+        else 
+            redirect "/books"
+        end
     end
 
     delete '/books/:id' do
         @book = Book.find_by(id: params[:id])
-        @book.destroy
-        redirect '/books'
+        if @book.user == current_user
+            @book.destroy
+            redirect '/books'
+        else
+            redirect '/books'
+        end 
     end 
 
     #add validations to patch and delete like edit
